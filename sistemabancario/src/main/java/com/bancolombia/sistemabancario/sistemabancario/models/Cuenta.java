@@ -1,5 +1,6 @@
 package com.bancolombia.sistemabancario.sistemabancario.models;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -22,6 +23,7 @@ public abstract class Cuenta {
 
     protected BigDecimal saldo;
     @OneToMany(mappedBy = "cuenta", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JsonManagedReference
 
     protected Set<Transaccion> historicoTransacciones;
 
@@ -108,10 +110,11 @@ public abstract class Cuenta {
 
     @Override
     public String toString() {
-        return " Datos de la cuenta cuenta\n" +
+        return " Datos de la cuenta\n" +
                 "Id de la cuenta :" + CuentaId +
                 "\n" +
                 "numero de la cuenta: " + numeroCuenta +
+                "\n" +
                 "saldo : " + saldo ;
     }
 }

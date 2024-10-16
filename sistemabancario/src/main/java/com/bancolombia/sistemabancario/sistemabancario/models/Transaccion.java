@@ -1,5 +1,6 @@
 package com.bancolombia.sistemabancario.sistemabancario.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -21,6 +22,7 @@ public class Transaccion {
 
     @ManyToOne
     @JoinColumn(name = "id_cuenta")
+    @JsonBackReference
     private Cuenta cuenta;
 
     public Transaccion() {
