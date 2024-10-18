@@ -17,12 +17,12 @@ Debes crear una clase abstracta y dos clases hijas:
 	    - `CuentaBásica`: cuenta estándar con comisiones por algunas operaciones.
 	    - `CuentaPremium`: cuenta sin comisiones adicionales.
 2. Operaciones sobre las cuentas: Implementa las siguientes operaciones que afectarán el saldo de las cuentas. Utiliza polimorfismo para que las reglas cambien según el tipo de cuenta:
-	- **Depósito desde sucursal**: sin costo.
-	- **Depósito desde cajero automático**: costo de 2 USD (solo en `CuentaBásica`).
-	- **Depósito desde otra cuenta**: costo de 1.5 USD.
-	- **Compra en establecimiento físico**: sin costo.
+	- **Depósito desde sucursal**: sin costo. -- basica: ok / premium: ok
+	- **Depósito desde cajero automático**: costo de 2 USD (solo en `CuentaBásica`).  -- basica: ok / premium: ok
+	- **Depósito desde otra cuenta**: costo de 1.5 USD.  -- basica: ok / premium: ok
+	- **Compra en establecimiento físico**: sin costo. -- basica: ok / premium: ok
 	- **Compra en página web**: costo de 5 USD por seguro contra robos.
-	- **Retiro en cajero**: costo de 1 USD (solo en `CuentaBásica`).
+	- **Retiro en cajero**: costo de 1 USD (solo en `CuentaBásica`).   -- basica: ok / premium: ok
 3. Historial de Transacciones: Al realizar cualquier operación, se debe registrar la transacción en una tabla de historial en PostgreSQL. Cada transacción debe tener:
 	- Tipo de transacción (depósito, retiro, compra).
 	- Monto de la operación.
