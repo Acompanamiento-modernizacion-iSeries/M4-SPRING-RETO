@@ -1,0 +1,12 @@
+CREATE TABLE cuenta_bancaria (
+    cuenta_nro SERIAL PRIMARY KEY,
+    saldo NUMERIC(15, 2),
+	id_Titular NUMERIC(15, 0),
+    titular VARCHAR(255) );
+
+CREATE TABLE transaccion (
+    id_transaccion SERIAL PRIMARY KEY,
+    cuenta_asociada INTEGER REFERENCES cuenta_bancaria(cuenta_nro),
+    tipo_transaccion VARCHAR(50),
+    valor NUMERIC(15, 2),
+    fecha DATE);
