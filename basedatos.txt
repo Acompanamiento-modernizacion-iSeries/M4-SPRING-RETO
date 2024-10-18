@@ -1,0 +1,18 @@
+CREATE TABLE cuenta_bancaria (
+    	cuenta_id SERIAL PRIMARY KEY,
+    	nro_cuenta BIGINT UNIQUE NOT NULL,
+	tipo_cuenta VARCHAR(50),
+    	saldo NUMERIC(15, 2),
+	nombre_cliente VARCHAR(100)
+);
+ 
+--Tabla para historia de transacciones de cada cuenta.
+CREATE TABLE transaccion (
+    transaccion_id SERIAL PRIMARY KEY,
+    cuenta_id BIGINT REFERENCES cuenta_bancaria(cuenta_id),
+    tipo_transaccion VARCHAR(100),
+    valor NUMERIC(15, 2),
+    comision NUMERIC(15, 2),
+    fecha DATE,
+    hora TIME
+);
