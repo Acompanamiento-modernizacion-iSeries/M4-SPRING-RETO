@@ -1,0 +1,56 @@
+http://localhost:8080
+
+GET: /cuenta/consultaSaldo
+{
+    "id": "3"
+}
+
+POST: /cuenta/depositoSucursal
+{
+    "idCuenta": "1",
+    "monto": "30",
+    "descripcion": "Deposito desde sucursal"
+}
+
+POST: /cuenta/depositoCajeroAuto
+{
+    "idCuenta": "1",
+    "monto": "20",
+    "descripcion": "Deposito desde cajero automatico"
+}
+
+POST: /cuenta/depositoOtraCuenta
+{
+    "idCuenta": "3",
+    "idCuentaDestino": "2",
+    "monto": "30",
+    "descripcion": "Deposito a otra cuenta"
+}
+
+POST: /cuenta/compraEstablecimiento
+{
+    "idCuenta": "2",
+    "monto": "20",
+    "descripcion": "Compra en establecimiento fisico"
+}
+
+POST: /cuenta/compraWeb
+{
+    "idCuenta": "2",
+    "monto": "20",
+    "descripcion": "Compra en pagina web"
+}
+
+POST: /cuenta/retiroCajero
+{
+    "idCuenta": "2",
+    "monto": "20",
+    "descripcion": "Retiro en cajero"
+}
+
+GET: /transaccion/ultimasTransacciones
+{
+    "id": "2",
+    "numTransacc": "1"
+}
+("numTransacc" es opcional)
